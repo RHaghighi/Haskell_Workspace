@@ -1,0 +1,12 @@
+getcommand "greet"  = "Greetings!"
+getcommand "depart" = "Farewell!"
+getcommand _        = "Please speak English!"
+
+trd (_,_,a) = a
+
+dropWhile' _ [] = []
+dropWhile' bool (x:xs) = 
+   if bool x then dropWhile' bool xs else (x:xs)
+
+map' _ [] = []
+map' f (x:y:xs) = f y : f x : map' f xs
